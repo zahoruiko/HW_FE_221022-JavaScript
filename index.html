@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hausaufgabe</title>
+    <script>
+        function alphabet_order(str) { 
+            // Разбиваем слово на отдельные буквы, сортируем массив букв, 
+            // объединяем его обратно в слово и возвращаем из функции
+            return str.split("").sort().join("");  
+        }
+        document.writeln(alphabet_order("uncopyrightable")); 
+
+        // Первый вариант реализации второго задания
+        function find_longest_word(str) {
+            // Разделяем строку на отдельные слова, сортируем по длине слова в убывающем порядке 
+            // и возвращаем только элемент с индексом 0, так как - это самое длинное слово 
+            return str.split(" ").sort((a, b) => b.length - a.length)[0];
+        }
+        document.writeln(find_longest_word('Web Development In Telran'));
+
+        // Второй вариант реализации второго задания
+        function find_longest_word2(str) {
+            return str.split(' ').reduce(function(longestWord, currentWord) {
+                if(currentWord.length > longestWord.length) {
+                    return currentWord;
+                } else {
+                    return longestWord;
+                }
+            }, "");
+        }
+        document.writeln(find_longest_word2("Web Development In Telran"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
