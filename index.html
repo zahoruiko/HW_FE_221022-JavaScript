@@ -23,6 +23,9 @@
 
         // Второй вариант реализации второго задания
         function find_longest_word2(str) {
+            // Делим строку на отдельные слова и получаем массив слов
+            // после этого сравниваем длину текущего слова с длиной предыдущего слова 
+            // (длина первого слова равна нулю, так как оно пустое: "")
             return str.split(' ').reduce(function(longestWord, currentWord) {
                 if(currentWord.length > longestWord.length) {
                     return currentWord;
