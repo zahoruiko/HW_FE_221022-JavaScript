@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hausaufgabe</title>
+    <title>Homework</title>
     <script>
         function alphabet_order(str) { 
-            // Разбиваем слово на отдельные буквы, сортируем массив букв, 
-            // объединяем его обратно в слово и возвращаем из функции
+            // We break the word into separate letters, 
+            // sort the array of letters, combine it back into a word 
+            // and return it from the function
             return str.split("").sort().join("");  
         }
         document.writeln(alphabet_order("uncopyrightable")); 
 
-        // Первый вариант реализации второго задания
+        // The first variant of the implementation of the second task
         function find_longest_word(str) {
-            // Разделяем строку на отдельные слова, сортируем по длине слова в убывающем порядке 
-            // и возвращаем только элемент с индексом 0, так как - это самое длинное слово 
+            // We divide the string into separate words, sort by word length in descending order 
+            // and return only the element with index 0, since this is the longest word
             return str.split(" ").sort((a, b) => b.length - a.length)[0];
         }
         document.writeln(find_longest_word('Web Development In Telran'));
 
-        // Второй вариант реализации второго задания
+        // The second version of the implementation of the second task
         function find_longest_word2(str) {
-            // Делим строку на отдельные слова и получаем массив слов
-            // после этого сравниваем длину текущего слова с длиной предыдущего слова 
-            // (длина первого слова равна нулю, так как оно пустое: "")
+            // Divide the string into separate words and get an array of words, 
+            // then compare the length of the current word with the length 
+            // of the previous word (the length of the first word is zero, since it is empty: "")
             return str.split(' ').reduce(function(longestWord, currentWord) {
                 if(currentWord.length > longestWord.length) {
                     return currentWord;
